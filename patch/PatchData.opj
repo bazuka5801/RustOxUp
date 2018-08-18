@@ -1,0 +1,133 @@
+{
+  "Name": "Untitled Oxide Project",
+  "TargetDirectory": "{TargetDirectory}",
+  "Manifests": [
+    {
+      "AssemblyName": "Assembly-CSharp.dll",
+      "Hooks": [
+        {
+          "Type": "Modify",
+          "Hook": {
+            "InjectionIndex": 57,
+            "RemoveCount": 0,
+            "Instructions": [
+              {
+                "OpCode": "ldstr",
+                "OpType": "String",
+                "Operand": "OnItemCraftStarted"
+              },
+              {
+                "OpCode": "ldloc_0",
+                "OpType": "None",
+                "Operand": null
+              },
+              {
+                "OpCode": "ldfld",
+                "OpType": "Field",
+                "Operand": "Assembly-CSharp|ItemCraftTask|owner"
+              },
+              {
+                "OpCode": "ldloc_0",
+                "OpType": "None",
+                "Operand": null
+              },
+              {
+                "OpCode": "ldloc_2",
+                "OpType": "None",
+                "Operand": null
+              },
+              {
+                "OpCode": "box",
+                "OpType": "Type",
+                "Operand": "mscorlib|System.Single"
+              },
+              {
+                "OpCode": "call",
+                "OpType": "Method",
+                "Operand": "Oxide.Core|Oxide.Core.Interface|CallHook(System.String, System.Object, System.Object, System.Object)"
+              },
+              {
+                "OpCode": "brfalse_s",
+                "OpType": "Instruction",
+                "Operand": 57
+              },
+              {
+                "OpCode": "ret",
+                "OpType": "None",
+                "Operand": null
+              }
+            ],
+            "HookTypeName": "Modify",
+            "Name": "[ItemCrafter] OnItemCraftStarted",
+            "HookName": "",
+            "AssemblyName": "Assembly-CSharp.dll",
+            "TypeName": "ItemCrafter",
+            "Flagged": false,
+            "Signature": {
+              "Exposure": 2,
+              "Name": "ServerUpdate",
+              "ReturnType": "System.Void",
+              "Parameters": [
+                "System.Single"
+              ]
+            },
+            "MSILHash": "EKBPTAtb0IkMFGDzo50Dl+S3IHY2gvLvDRCM91y8k3Y=",
+            "BaseHookName": null,
+            "HookCategory": null
+          }
+        },
+        {
+          "Type": "Simple",
+          "Hook": {
+            "InjectionIndex": 13,
+            "ReturnBehavior": 1,
+            "ArgumentBehavior": 4,
+            "ArgumentString": "l0, a0",
+            "HookTypeName": "Simple",
+            "Name": "SV_RequestFile",
+            "HookName": "OnSV_RequestFile",
+            "AssemblyName": "Assembly-CSharp.dll",
+            "TypeName": "BaseEntity",
+            "Flagged": false,
+            "Signature": {
+              "Exposure": 2,
+              "Name": "SV_RequestFile",
+              "ReturnType": "System.Void",
+              "Parameters": [
+                "BaseEntity/RPCMessage"
+              ]
+            },
+            "MSILHash": "Yaj7/moFBveLP+8RoxGaiNZdwrcLmFHMr3t/a7vCrAQ=",
+            "BaseHookName": null,
+            "HookCategory": null
+          }
+        }
+      ],
+      "Modifiers": [
+        {
+          "Name": "FileStorage::GetCRC",
+          "AssemblyName": "Assembly-CSharp.dll",
+          "TypeName": "FileStorage",
+          "Type": 1,
+          "TargetExposure": [
+            2
+          ],
+          "Flagged": false,
+          "Signature": {
+            "Exposure": [
+              0
+            ],
+            "Name": "GetCRC",
+            "FullTypeName": "System.UInt32",
+            "Parameters": [
+              "System.Byte[]",
+              "FileStorage/Type"
+            ]
+          },
+          "MSILHash": "brGbSd06vfTS1cx423ZXPTTSNDOVnl9dl+s48tuXX6g="
+        }
+      ],
+      "Fields": []
+    }
+  ]
+}
